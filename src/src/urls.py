@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from video_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+    #path('emotion/', views.emotion_detection, name = 'emotion_detection'),
+    #path ('', views.image_upload, name = 'image_upload'),
+    path('', views.Home, name='emotion_detection'),
+] 

@@ -1,5 +1,6 @@
 # import required packages
 import cv2
+import scipy
 from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D, Dense, Dropout, Flatten
 from keras.optimizers import Adam
@@ -52,7 +53,7 @@ emotion_model.compile(loss='categorical_crossentropy', optimizer=Adam(lr=0.0001,
 emotion_model_info = emotion_model.fit_generator(
         train_generator,
         steps_per_epoch=28709 // 64,
-        epochs=60,
+        epochs=50,
         validation_data=validation_generator,
         validation_steps=7178 // 64)
 
